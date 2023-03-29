@@ -24,3 +24,6 @@ example_keyword.txt     --多个关键字举例txt文件
 
 环境配置后，直接运行baidu_img.py或baidu_img_2.0.py
 
+
+注：如果有感兴趣的小伙伴,联系2933582448@qq.com
+
