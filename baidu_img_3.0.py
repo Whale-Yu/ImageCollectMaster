@@ -22,7 +22,7 @@ def mkdirs():
     # 获取计算机的用户名
     user_name = getpass.getuser()
     # 保存至桌面
-    outputs = f'C:/Users/{user_name}/Desktop/output-3-last'
+    outputs = f'C:/Users/{user_name}/Desktop/output'
     data_dir_name = outputs + r'/' + 'data'
     log_dir_name = outputs + r'/' + 'log'
     error_dir_name = outputs + r'/' + 'error'
