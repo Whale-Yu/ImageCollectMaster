@@ -12,11 +12,11 @@
 
 ## 项目目录结构
 
-baidu_img.py --单个关键字采集
+baidu_img.py ——单个关键字采集
 
-baidu_img_2.0.py --新增多个关键字采集
+baidu_img_2.0.py ——新增多个关键字采集
 
-baidu_img_3.0.py --就2.0version存在的bug进行修改，修改中...
+baidu_img_3.0.py ——内容建设中...
 
 example_keyword.txt     --多个关键字举例txt文件
 
