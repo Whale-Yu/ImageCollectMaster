@@ -5,6 +5,7 @@
 ## 介绍
 
 该项目功能是爬取百度图库的图片，可以指定关键字和数量，实现了多个或多个关键字的图片采集。
+演示地址：https://www.bilibili.com/video/BV1Mv4y177yL/?spm_id_from=333.999.0.0
 
 ## 环境依赖
 ``pip install requirements.txt``
