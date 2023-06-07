@@ -50,11 +50,15 @@ class MyWindow(QWidget, Ui_Form):
             QMessageBox.warning(self, '警告', '请输入关键字或选择路径')
         else:
             # 向ouputLineEdit追加文本内容
-            self.ouputLineEdit.appendPlainText('采集信息如下:\n关键字:{}\n数量{}\n保存路径:{}'.format(keyword.split(','), num, save_path))
+            self.outputLineEdit.append('采集信息如下:\n关键字:{}\n数量{}\n保存路径:{}'.format(keyword.split(','), num, save_path))
             # keyword转列表
             keyword_list = keyword.split('，')
             for keyword in keyword_list:
+                self.hide()
                 MyWindow.download_images(keyword, num, save_path)
+            self.show()
+            self.outputLineEdit.append(f'爬取成功,图片保存至{save_path}')
+
 
     def stop_download(self):
         print('停止采集')
@@ -102,7 +106,7 @@ class MyWindow(QWidget, Ui_Form):
             for image_info in response['data']:
                 try:
                     # 打印当前正在下载的图片的 URL
-                    time.sleep(2)
+                    # time.sleep(2)
                     print(f'正在下载第 {count} 张图片')
                     print(image_info['thumbURL'])
 

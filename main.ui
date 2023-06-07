@@ -117,13 +117,13 @@
     <string>停止采集</string>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="ouputLineEdit">
+  <widget class="QTextEdit" name="outputLineEdit">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>280</y>
+     <y>270</y>
      <width>351</width>
-     <height>241</height>
+     <height>251</height>
     </rect>
    </property>
   </widget>
