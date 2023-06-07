@@ -28,7 +28,7 @@ class Ui_Form(object):
         self.keywordLabel.setGeometry(QRect(30, 30, 111, 41))
         self.startBtn = QPushButton(Form)
         self.startBtn.setObjectName(u"startBtn")
-        self.startBtn.setGeometry(QRect(30, 200, 151, 41))
+        self.startBtn.setGeometry(QRect(30, 210, 151, 41))
         self.numSpinBox = QSpinBox(Form)
         self.numSpinBox.setObjectName(u"numSpinBox")
         self.numSpinBox.setGeometry(QRect(140, 90, 241, 21))
@@ -45,13 +45,13 @@ class Ui_Form(object):
         self.savePathLabel.setGeometry(QRect(30, 130, 101, 41))
         self.savePathBtn = QPushButton(Form)
         self.savePathBtn.setObjectName(u"savePathBtn")
-        self.savePathBtn.setGeometry(QRect(140, 140, 91, 24))
+        self.savePathBtn.setGeometry(QRect(140, 140, 241, 24))
         self.outputLineEdit = QTextEdit(Form)
         self.outputLineEdit.setObjectName(u"outputLineEdit")
-        self.outputLineEdit.setGeometry(QRect(30, 260, 351, 231))
+        self.outputLineEdit.setGeometry(QRect(30, 290, 351, 241))
         self.stopBtn = QPushButton(Form)
         self.stopBtn.setObjectName(u"stopBtn")
-        self.stopBtn.setGeometry(QRect(230, 200, 151, 41))
+        self.stopBtn.setGeometry(QRect(230, 210, 151, 41))
 
         self.retranslateUi(Form)
 
@@ -64,7 +64,7 @@ class Ui_Form(object):
         self.startBtn.setText(QCoreApplication.translate("Form", u"\u5f00\u59cb\u91c7\u96c6", None))
         self.numLabel.setText(QCoreApplication.translate("Form", u"\u8bbe\u7f6e\u722c\u53d6\u6570\u91cf\uff1a", None))
         self.savePathLabel.setText(QCoreApplication.translate("Form", u"\u8bbe\u7f6e\u4fdd\u5b58\u8def\u5f84\uff1a", None))
-        self.savePathBtn.setText(QCoreApplication.translate("Form", u"\u9009\u62e9\u4fdd\u5b58\u8def\u5f84", None))
+        self.savePathBtn.setText(QCoreApplication.translate("Form", u"\u9009\u62e9\u56fe\u7247\u4fdd\u5b58\u8def\u5f84", None))
         self.stopBtn.setText(QCoreApplication.translate("Form", u"\u505c\u6b62\u91c7\u96c6", None))
     # retranslateUi
 
