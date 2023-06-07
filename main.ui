@@ -104,16 +104,6 @@
     <string>选择图片保存路径</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="outputLineEdit">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>290</y>
-     <width>351</width>
-     <height>241</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="stopBtn">
    <property name="geometry">
     <rect>
@@ -125,6 +115,16 @@
    </property>
    <property name="text">
     <string>停止采集</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="ouputLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>280</y>
+     <width>351</width>
+     <height>241</height>
+    </rect>
    </property>
   </widget>
  </widget>

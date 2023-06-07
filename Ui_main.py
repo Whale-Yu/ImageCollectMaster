@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QSpinBox, QTextEdit, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPlainTextEdit,
+    QPushButton, QSizePolicy, QSpinBox, QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -46,12 +46,12 @@ class Ui_Form(object):
         self.savePathBtn = QPushButton(Form)
         self.savePathBtn.setObjectName(u"savePathBtn")
         self.savePathBtn.setGeometry(QRect(140, 140, 241, 24))
-        self.outputLineEdit = QTextEdit(Form)
-        self.outputLineEdit.setObjectName(u"outputLineEdit")
-        self.outputLineEdit.setGeometry(QRect(30, 290, 351, 241))
         self.stopBtn = QPushButton(Form)
         self.stopBtn.setObjectName(u"stopBtn")
         self.stopBtn.setGeometry(QRect(230, 210, 151, 41))
+        self.ouputLineEdit = QPlainTextEdit(Form)
+        self.ouputLineEdit.setObjectName(u"ouputLineEdit")
+        self.ouputLineEdit.setGeometry(QRect(30, 280, 351, 241))
 
         self.retranslateUi(Form)
 

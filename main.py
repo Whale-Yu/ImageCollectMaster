@@ -1,3 +1,5 @@
+import time
+
 from PySide6.QtWidgets import QWidget, QApplication, QFileDialog, QMessageBox
 
 from Ui_main import Ui_Form
@@ -14,7 +16,8 @@ class MyWindow(QWidget, Ui_Form):
         self.setupUi(self)
 
         # 设置keywordLineEdit提示
-        self.keywordLineEdit.setPlaceholderText('苹果，荔枝，(多个关键字以中文逗号隔开)')
+        self.keywordLineEdit.setText('苹果，香蕉')
+        # self.keywordLineEdit.setPlaceholderText('苹果，荔枝，(多个关键字以中文逗号隔开)')
         # 设置numSpinBox的范围
         self.numSpinBox.setRange(1, 1000)
         # 设置numSpinBox默认值
@@ -26,7 +29,7 @@ class MyWindow(QWidget, Ui_Form):
         self.stopBtn.clicked.connect(self.stop_download)
 
         # 初始化
-        self.save_path = ''
+        self.save_path = 'dataset'
 
     def choose_savePath(self):
         print('选择路径')
@@ -46,18 +49,20 @@ class MyWindow(QWidget, Ui_Form):
             # 弹出警告
             QMessageBox.warning(self, '警告', '请输入关键字或选择路径')
         else:
-            self.outputLineEdit.append('采集信息如下:\n关键字:{}\n数量{}\n保存路径:{}'.format(keyword.split(','), num, save_path))
+            # 向ouputLineEdit追加文本内容
+            self.ouputLineEdit.appendPlainText('采集信息如下:\n关键字:{}\n数量{}\n保存路径:{}'.format(keyword.split(','), num, save_path))
             # keyword转列表
             keyword_list = keyword.split('，')
             for keyword in keyword_list:
-                self.download_images(self, keyword, num, save_path)
+                MyWindow.download_images(keyword, num, save_path)
 
     def stop_download(self):
         print('停止采集')
         # 让整个程序终止运行即可
         QApplication.quit()
 
-    def download_images(self, keyword: str, num: int, save_path: str):
+    @staticmethod
+    def download_images(keyword: str, num: int, save_path: str):
         """
         爬取百度图片搜索结果中指定关键词keyword的前 num 张图片，并下载到指定文件夹。
         :param keyword: 搜索关键词
@@ -74,8 +79,8 @@ class MyWindow(QWidget, Ui_Form):
 
         # 持续爬取图片，直到达到指定数量
         while True:
-            # print(f'正在爬取第{page_num + 1}页...')
-            self.outputLineEdit.setText(f'正在爬取第{page_num + 1}页...')
+            print(f'正在爬取第{page_num + 1}页...')
+            # self.ouputLineEdit.appendPlainText(f'正在爬取第{page_num + 1}页...')
 
             # 待请求URL
             url = f'https://image.baidu.com/search/acjson?tn=resultjs' \
@@ -97,6 +102,7 @@ class MyWindow(QWidget, Ui_Form):
             for image_info in response['data']:
                 try:
                     # 打印当前正在下载的图片的 URL
+                    time.sleep(2)
                     print(f'正在下载第 {count} 张图片')
                     print(image_info['thumbURL'])
 
