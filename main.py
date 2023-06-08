@@ -54,9 +54,9 @@ class MyWindow(QWidget, Ui_Form):
             # keyword转列表
             keyword_list = keyword.split('，')
             for keyword in keyword_list:
-                self.hide()
+                # self.hide()
                 MyWindow.download_images(keyword, num, save_path)
-            self.show()
+            # self.show()
             self.outputLineEdit.append(f'爬取成功,图片保存至{save_path}')
 
 
