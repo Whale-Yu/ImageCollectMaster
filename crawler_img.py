@@ -1,6 +1,7 @@
 # 导入依赖库
 import requests
 import os
+from faker import Faker
 
 
 def download_images(keyword: str, num: int, save_path: str):
@@ -32,7 +33,7 @@ def download_images(keyword: str, num: int, save_path: str):
 
         # 模拟请求头
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.50'
+            'User-Agent': Faker().user_agent()
         }
 
         # 发送 HTTP 请求，获取响应结果并解析 JSON 数据

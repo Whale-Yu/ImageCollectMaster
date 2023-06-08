@@ -3,6 +3,7 @@ import threading
 import time
 import datetime
 import requests
+from faker import Faker
 
 from PySide6.QtCore import Qt, QThread, Signal
 from PySide6.QtGui import QCursor, QCloseEvent, QIcon
@@ -25,7 +26,7 @@ class DownloadThread(QThread):
         self.save_path = save_path
         self._stop_flag = False  # 停止标志，用于控制下载进程的终止
 
-    def download_baidu_image(self):
+    def run(self):
         """
         线程主函数，用于执行图片下载操作
         """
@@ -53,7 +54,7 @@ class DownloadThread(QThread):
 
                     # 模拟请求头
                     headers = {
-                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.50'
+                        'User-Agent': Faker().user_agent()
                     }
 
                     # 发送 HTTP 请求，获取响应结果并解析 JSON 数据
@@ -157,6 +158,7 @@ class MyWindow(QWidget, Ui_Form):
 
             # 显示进度对话框
             self.progress_dialog = QProgressDialog(f'开始下载图片...', '取消', 0, num, self)
+            self.progress_dialog.setWindowTitle('下载进度')
             self.progress_dialog.setWindowModality(Qt.WindowModal)
             self.progress_dialog.setRange(0, self.download_thread.num)
             self.progress_dialog.setCancelButton(None)
