@@ -1,3 +1,8 @@
-## 基于master分支添加了GUI界面-一键采集图片
+# 基于master分支添加了GUI界面
 
-# 快速运行
+# python运行
+`pip install -r requirements.txt `
+
+`python main.py`
+
+# exe运行
