@@ -11,4 +11,4 @@
 - 优点：无需依赖任何环境，下载即可使用
 - 缺点：目前exe文件较大（待修复）
 - 下载地址：
-  - [点我：下载压缩包](https://github.com/CrabBoss-lab/Baidu-Image-Loader/releases/tag/V1.0.0)
+  - [点我：下载压缩包](https://github.com/CrabBoss-lab/Baidu-Image-Loader/releases/tag/v1.0.1)
