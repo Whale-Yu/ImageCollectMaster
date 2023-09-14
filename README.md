@@ -10,4 +10,4 @@
 # exe运行
 - 优点：无需依赖任何环境，下载即可使用
 - 下载地址：
-  - [点我：下载压缩包](https://github.com/CrabBoss-lab/Baidu-Image-Loader/releases)
+  - [点我：下载压缩包](https://github.com/CrabBoss-lab/Baidu-Image-Loader/releases/tag/GUI-v3)
