@@ -9,7 +9,7 @@ options = {
 
 # TARGET
 executables = [
-    Executable('main.py', base='Win32GUI')
+    Executable('../main.py', base='Win32GUI')
 ]
 
 # SETUP CX FREEZE
