@@ -14,7 +14,7 @@ executables = [
 
 # SETUP CX FREEZE
 setup(
-    name="图片采集大师",
+    name="百度图片采集器",
     version="1.0",
     description="百度图片采集器-基于master分支添加了GUI界面",
     author="yujunyu",
