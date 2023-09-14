@@ -125,9 +125,9 @@ class MyWindow(QWidget, Ui_Form):
         # self.keywordLineEdit.setText('苹果，香蕉')
         self.keywordLineEdit.setPlaceholderText('苹果，荔枝，(多个关键字以中文逗号隔开)')
         # 设置numSpinBox的范围
-        self.numSpinBox.setRange(1, 1000)
+        self.numSpinBox.setRange(1, 5000)
         # 设置numSpinBox默认值
-        self.numSpinBox.setValue(100)
+        self.numSpinBox.setValue(50)
         # 设置outputLineEdit只读
         self.outputLineEdit.setReadOnly(True)
 
@@ -143,6 +143,9 @@ class MyWindow(QWidget, Ui_Form):
     def choose_savePath(self):
         print('选择路径')
         self.save_path = QFileDialog.getExistingDirectory(self, '选择保存路径', '.')
+        # 弹窗表示选择路径成功
+        QMessageBox.information(self, '提示', '已设置保存路径')
+        self.outputLineEdit.append('【{}】- 保存路径：{}'.format(self.now_time(), self.save_path))
 
     def start_download(self):
         print('开始采集')
@@ -159,7 +162,7 @@ class MyWindow(QWidget, Ui_Form):
             QMessageBox.warning(self, '警告', '请输入关键字或选择路径')
         else:
             # 向ouputLineEdit追加文本内容
-            self.outputLineEdit.append('【{}】-采集信息如下:\n关键字:{}\n数量:{}\n保存路径:{}'.format(self.now_time(), keyword.split(','), num, save_path))
+            self.outputLineEdit.append('【{}】- 正在采集！当前采集信息：\n关键字：{}\n数量：{}\n保存路径：{}'.format(self.now_time(), keyword.split(','), num, save_path))
             # keyword转列表
             keyword_list = keyword.split('，')
 
@@ -204,10 +207,14 @@ class MyWindow(QWidget, Ui_Form):
             # 判断下载是否被终止
             if self.download_thread.isFinished():
                 save_path = self.download_thread.save_path
-                self.outputLineEdit.append(f'【{self.now_time()}】-下载成功，图片保存至{save_path}')
+                self.outputLineEdit.append(f'【{self.now_time()}】-下载成功！图片保存至{save_path}')
+                # 弹框提示下载完成
+                QMessageBox.information(self, '提示', '下载完成')
             else:
                 save_path = self.download_thread.save_path
-                self.outputLineEdit.append(f'【{self.now_time()}】-下载已完成，图片保存至{save_path}')
+                self.outputLineEdit.append(f'【{self.now_time()}】-下载已完成！图片保存至{save_path}')
+                # 弹框提示下载完成
+                QMessageBox.information(self, '提示', '下载完成')
 
             self.download_thread = None
 
