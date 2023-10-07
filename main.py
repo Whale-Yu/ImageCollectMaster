@@ -164,7 +164,7 @@ class MyWindow(QWidget, Ui_Form):
         # self.keywordLineEdit.setText('苹果，香蕉')
         self.keywordLineEdit.setPlaceholderText('苹果，荔枝，(多个关键字以中文逗号隔开)')
         # 设置numSpinBox的范围
-        self.numSpinBox.setRange(1, 5000)
+        self.numSpinBox.setRange(1, 10000)
         # 设置numSpinBox默认值
         self.numSpinBox.setValue(50)
         # 设置outputLineEdit只读
