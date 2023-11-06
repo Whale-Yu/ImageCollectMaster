@@ -158,7 +158,7 @@ class MyWindow(QWidget, Ui_Form):
         # 窗口大小固定
         self.setFixedSize(self.width(), self.height())
         # 设置图标
-        self.setWindowIcon(QIcon('assets/title.ico'))
+        self.setWindowIcon(QIcon('assets/title.png'))
 
         # 设置keywordLineEdit提示
         # self.keywordLineEdit.setText('苹果，香蕉')
