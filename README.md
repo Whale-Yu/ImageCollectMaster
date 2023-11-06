@@ -23,7 +23,7 @@
 - 下载地址：
   - [点我：下载【main.dist.zip】压缩包](https://github.com/CrabBoss-lab/ImageCollectMaster/releases)
   - 注：下载最新版本（标有Latest）
-- [使用教程]( ##使用教程 )
+- [使用教程]( ##三、使用教程（exe） )
 
 ### 方式2：python运行（只要配置环境即可运行）
 ```
