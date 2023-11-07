@@ -15,7 +15,7 @@
   />
   <img
     alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=CrabBoss-lab/ImageCollectMaster&type=Date"
+    src="https://api.star-history.com/svg?repos=star-history/star-history&type=Date"
   />
 </picture>
 
